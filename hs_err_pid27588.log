@@ -1,0 +1,236 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (vmThread.cpp:658), pid=27588, tid=0x0000000000004aac
+#  fatal error: Nested VM operation CollectForMetadataAllocation requested by operation ChangeBreakpoints
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_171-b11) (build 1.8.0_171-b11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.171-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001e634800):  VMThread [stack: 0x000000001f890000,0x000000001f990000] [id=19116]
+
+Stack: [0x000000001f890000,0x000000001f990000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+VM_Operation (0x000000001feef6d0): ChangeBreakpoints, mode: safepoint, requested by thread 0x000000001e6e2800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000002040b800 JavaThread "Thread-3" daemon [_thread_blocked, id=19236, stack(0x00000000220c0000,0x00000000221c0000)]
+  0x000000002040d000 JavaThread "rebel-build-info" daemon [_thread_blocked, id=16816, stack(0x0000000021fc0000,0x00000000220c0000)]
+  0x0000000020409800 JavaThread "rebel-change-detector-thread" daemon [_thread_blocked, id=18488, stack(0x0000000021ca0000,0x0000000021da0000)]
+  0x000000002040e000 JavaThread "rebel-debugger-thread" daemon [_thread_blocked, id=23584, stack(0x00000000211f0000,0x00000000212f0000)]
+  0x0000000020402000 JavaThread "rebel-debugger-attach-notifier" daemon [_thread_blocked, id=28188, stack(0x00000000210f0000,0x00000000211f0000)]
+  0x0000000020408000 JavaThread "rebel-heartbeat-thread" daemon [_thread_blocked, id=27832, stack(0x0000000020ff0000,0x00000000210f0000)]
+  0x0000000020407000 JavaThread "rebel-redeploy-thread" daemon [_thread_blocked, id=20448, stack(0x0000000020ef0000,0x0000000020ff0000)]
+  0x0000000020408800 JavaThread "rebel-init-licensing" daemon [_thread_blocked, id=8172, stack(0x0000000020df0000,0x0000000020ef0000)]
+  0x00000000203ff800 JavaThread "rebel-leaseManager-1" daemon [_thread_blocked, id=27568, stack(0x0000000020cf0000,0x0000000020df0000)]
+  0x0000000020405800 JavaThread "rebel-weak-reaper" daemon [_thread_blocked, id=22624, stack(0x00000000209f0000,0x0000000020af0000)]
+  0x0000000020402800 JavaThread "rebel-cache-writer" daemon [_thread_blocked, id=24648, stack(0x00000000208f0000,0x00000000209f0000)]
+  0x0000000020405000 JavaThread "rebel-fsnotify-OutputReader" daemon [_thread_in_native, id=26560, stack(0x0000000021ba0000,0x0000000021ca0000)]
+  0x0000000020400800 JavaThread "rebel-fsnotify-OutputReader" daemon [_thread_in_native, id=11216, stack(0x0000000021aa0000,0x0000000021ba0000)]
+  0x0000000020404000 JavaThread "rebel-fsnotify-ShutdownOnTermination" daemon [_thread_blocked, id=27944, stack(0x00000000219a0000,0x0000000021aa0000)]
+  0x0000000020403800 JavaThread "rebel-logger" daemon [_thread_blocked, id=28184, stack(0x00000000222a0000,0x00000000223a0000)]
+  0x000000002029a000 JavaThread "rebel-CacheKeepAlive" daemon [_thread_blocked, id=4804, stack(0x00000000213f0000,0x00000000214f0000)]
+  0x000000001e6f0000 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=20932, stack(0x000000001fff0000,0x00000000200f0000)]
+  0x000000000342e000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=1644, stack(0x000000001fef0000,0x000000001fff0000)]
+  0x000000001e6e2800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=19836, stack(0x000000001fdf0000,0x000000001fef0000)]
+  0x000000001e6d6800 JavaThread "Attach Listener" daemon [_thread_blocked, id=9168, stack(0x000000001fcf0000,0x000000001fdf0000)]
+  0x000000001e6d5000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=27068, stack(0x000000001fbf0000,0x000000001fcf0000)]
+  0x000000001d179800 JavaThread "Finalizer" daemon [_thread_blocked, id=27464, stack(0x000000001fa90000,0x000000001fb90000)]
+  0x000000001d172000 JavaThread "Reference Handler" daemon [_thread_blocked, id=17336, stack(0x000000001f990000,0x000000001fa90000)]
+  0x0000000003338800 JavaThread "main" [_thread_blocked, id=27584, stack(0x0000000003230000,0x0000000003330000)]
+
+Other Threads:
+=>0x000000001e634800 VMThread [stack: 0x000000001f890000,0x000000001f990000] [id=19116]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000000003334f80] Threads_lock - owner thread: 0x000000001e634800
+
+Heap:
+ PSYoungGen      total 75776K, used 64846K [0x000000076b800000, 0x0000000770c80000, 0x00000007c0000000)
+  eden space 65024K, 84% used [0x000000076b800000,0x000000076edc15e0,0x000000076f780000)
+  from space 10752K, 91% used [0x000000076f780000,0x0000000770112538,0x0000000770200000)
+  to   space 10752K, 0% used [0x0000000770200000,0x0000000770200000,0x0000000770c80000)
+ ParOldGen       total 173568K, used 0K [0x00000006c2800000, 0x00000006cd180000, 0x000000076b800000)
+  object space 173568K, 0% used [0x00000006c2800000,0x00000006c2800000,0x00000006cd180000)
+ Metaspace       used 20105K, capacity 21134K, committed 21296K, reserved 1067008K
+  class space    used 2559K, capacity 2877K, committed 2944K, reserved 1048576K
+
+Card table byte_map: [0x0000000012990000,0x0000000013180000] byte_map_base: 0x000000000f37c000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000539508c0
+ Begin Bits: [0x00000000140d0000, 0x0000000018030000)
+ End Bits:   [0x0000000018030000, 0x000000001bf90000)
+
+Polling page: 0x0000000002c70000
+
+CodeCache: size=245760Kb used=572Kb max_used=572Kb free=245187Kb
+ bounds [0x00000000035d0000, 0x0000000003840000, 0x00000000125d0000]
+ total_blobs=382 nmethods=55 adapters=300
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (2 events):
+Event: 0.709 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 75776K, used 65024K [0x000000076b800000, 0x0000000770c80000, 0x00000007c0000000)
+  eden space 65024K, 100% used [0x000000076b800000,0x000000076f780000,0x000000076f780000)
+  from space 10752K, 0% used [0x0000000770200000,0x0000000770200000,0x0000000770c80000)
+  to   space 10752K, 0% used [0x000000076f780000,0x000000076f780000,0x0000000770200000)
+ ParOldGen       total 173568K, used 0K [0x00000006c2800000, 0x00000006cd180000, 0x000000076b800000)
+  object space 173568K, 0% used [0x00000006c2800000,0x00000006c2800000,0x00000006cd180000)
+ Metaspace       used 14028K, capacity 14998K, committed 15104K, reserved 1062912K
+  class space    used 1723K, capacity 2037K, committed 2048K, reserved 1048576K
+Event: 0.715 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 75776K, used 9801K [0x000000076b800000, 0x0000000770c80000, 0x00000007c0000000)
+  eden space 65024K, 0% used [0x000000076b800000,0x000000076b800000,0x000000076f780000)
+  from space 10752K, 91% used [0x000000076f780000,0x0000000770112538,0x0000000770200000)
+  to   space 10752K, 0% used [0x0000000770200000,0x0000000770200000,0x0000000770c80000)
+ ParOldGen       total 173568K, used 0K [0x00000006c2800000, 0x00000006cd180000, 0x000000076b800000)
+  object space 173568K, 0% used [0x00000006c2800000,0x00000006c2800000,0x00000006cd180000)
+ Metaspace       used 14028K, capacity 14998K, committed 15104K, reserved 1062912K
+  class space    used 1723K, capacity 2037K, committed 2048K, reserved 1048576K
+}
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (8 events):
+Event: 0.904 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.ay, count=1
+Event: 0.905 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.as, count=1
+Event: 0.907 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.a, count=1
+Event: 0.908 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.d, count=1
+Event: 0.909 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.f, count=1
+Event: 0.911 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.e, count=1
+Event: 0.912 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.g, count=1
+Event: 0.913 Thread 0x000000001e634800 redefined class name=com.zeroturnaround.jrebelbase.facade.ad, count=1
+
+Internal exceptions (10 events):
+Event: 0.243 Thread 0x0000000003338800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076bce9ee8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\jvm.cpp, line 1435]
+Event: 0.342 Thread 0x0000000003338800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076c162338) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.344 Thread 0x0000000003338800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x000000076c16fab8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.377 Thread 0x0000000003338800 Exception <a 'java/lang/ClassNotFoundException': com/ibm/oti/vm/VM> (0x000000076c2d41b0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.424 Thread 0x0000000020297800 Exception <a 'java/lang/ClassNotFoundException': com/ibm/oti/vm/VM> (0x000000076c6f4ec0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.466 Thread 0x0000000020298800 Exception <a 'java/lang/ClassNotFoundException': com/ibm/oti/vm/VM> (0x000000076e4bdf50) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.658 Thread 0x0000000003338800 Exception <a 'java/lang/NoClassDefFoundError': jdk/internal/misc/Unsafe> (0x000000076c438b28) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 208]
+Event: 0.887 Thread 0x0000000003338800 Exception <a 'java/lang/ClassNotFoundException': java/lang/invoke/MethodHandleImpl$FieldAccessor> (0x000000076bfccef8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.915 Thread 0x0000000003338800 Exception <a 'java/lang/ClassNotFoundException': jdk/internal/misc/Unsafe> (0x000000076c129148) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 1.320 Thread 0x0000000003338800 Exception <a 'java/lang/ClassNotFoundException': java/lang/J9VMInternals> (0x000000076dc7f5c8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u171\10807\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+
+Events (10 events):
+Event: 2.232 loading class sun/util/resources/zh/CalendarData_zh done
+Event: 2.232 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/m
+Event: 2.232 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/m done
+Event: 2.232 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/k done
+Event: 2.232 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/o
+Event: 2.233 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/o done
+Event: 2.233 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/n
+Event: 2.233 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/n done
+Event: 2.233 loading class com/zeroturnaround/jrebel/bundled/org/apache/hc/client5/http/impl/m
+Event: 2.233 Executing VM operation: ChangeBreakpoints
+
+
+Dynamic libraries:
+0x00007ff7c51a0000 - 0x00007ff7c51d7000 	D:\develop\Java\jdk.1.8\bin\java.exe
+0x00007ff9993d0000 - 0x00007ff9995e5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff998270000 - 0x00007ff998334000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff996820000 - 0x00007ff996bc4000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff9981c0000 - 0x00007ff99826e000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff997ee0000 - 0x00007ff997f87000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff997e30000 - 0x00007ff997ed4000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff997bd0000 - 0x00007ff997ce7000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff999170000 - 0x00007ff99931b000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff996c90000 - 0x00007ff996cb6000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff998090000 - 0x00007ff9980b9000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff996ff0000 - 0x00007ff997108000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff996e30000 - 0x00007ff996eca000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff996ed0000 - 0x00007ff996fe1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff979db0000 - 0x00007ff97a03f000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.23471.1000_none_eaba942c199c6c18\COMCTL32.dll
+0x00007ff9979c0000 - 0x00007ff9979f1000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000054080000 - 0x0000000054152000 	D:\develop\Java\jdk.1.8\jre\bin\msvcr100.dll
+0x0000000053130000 - 0x00000000539d0000 	D:\develop\Java\jdk.1.8\jre\bin\server\jvm.dll
+0x00007ff9983c0000 - 0x00007ff9983c8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff9898a0000 - 0x00007ff9898a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff98fb70000 - 0x00007ff98fb7a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff98a290000 - 0x00007ff98a2c4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff9983d0000 - 0x00007ff998441000 	C:\WINDOWS\System32\WS2_32.dll
+0x0000000054070000 - 0x000000005407f000 	D:\develop\Java\jdk.1.8\jre\bin\verify.dll
+0x0000000054040000 - 0x0000000054069000 	D:\develop\Java\jdk.1.8\jre\bin\java.dll
+0x0000000053fa0000 - 0x0000000053fd5000 	D:\develop\Java\jdk.1.8\jre\bin\jdwp.dll
+0x0000000053f90000 - 0x0000000053f98000 	D:\develop\Java\jdk.1.8\jre\bin\npt.dll
+0x00007ff971630000 - 0x00007ff97167e000 	C:\Users\www14\AppData\Roaming\JetBrains\IntelliJIdea2022.3\plugins\jr-ide-idea\lib\jrebel6\lib\jrebel64.dll
+0x00007ff998470000 - 0x00007ff998c94000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff997f90000 - 0x00007ff998083000 	C:\WINDOWS\System32\shcore.dll
+0x0000000053f60000 - 0x0000000053f83000 	D:\develop\Java\jdk.1.8\jre\bin\instrument.dll
+0x0000000054020000 - 0x0000000054036000 	D:\develop\Java\jdk.1.8\jre\bin\zip.dll
+0x00007ff994730000 - 0x00007ff99501e000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007ff998de0000 - 0x00007ff99916a000 	C:\WINDOWS\System32\combase.dll
+0x00007ff9945f0000 - 0x00007ff99472e000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x00007ff998ca0000 - 0x00007ff998cfe000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff9966d0000 - 0x00007ff9966f1000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x0000000053f50000 - 0x0000000053f59000 	D:\develop\Java\jdk.1.8\jre\bin\dt_socket.dll
+0x00007ff995ce0000 - 0x00007ff995d49000 	C:\WINDOWS\system32\mswsock.dll
+0x0000000053f40000 - 0x0000000053f4d000 	D:\develop\Java\jdk.1.8\jre\bin\management.dll
+0x0000000054000000 - 0x000000005401a000 	D:\develop\Java\jdk.1.8\jre\bin\net.dll
+0x0000000053fe0000 - 0x0000000053ff1000 	D:\develop\Java\jdk.1.8\jre\bin\nio.dll
+0x0000000053f10000 - 0x0000000053f34000 	D:\develop\Java\jdk.1.8\jre\bin\sunec.dll
+0x00007ff986270000 - 0x00007ff98628b000 	C:\Users\www14\.jrebel\jrebel-temp\ver-23f08149\IdeaWin64.dll
+0x0000000053f00000 - 0x0000000053f0b000 	D:\develop\Java\jdk.1.8\jre\bin\sunmscapi.dll
+0x00007ff996cc0000 - 0x00007ff996e27000 	C:\WINDOWS\System32\CRYPT32.dll
+0x00007ff995280000 - 0x00007ff9952ad000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ff997320000 - 0x00007ff997329000 	C:\WINDOWS\System32\NSI.dll
+0x00007ff98fb80000 - 0x00007ff98fb99000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff98f1c0000 - 0x00007ff98f1df000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x00007ff9952b0000 - 0x00007ff9953a3000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ff995fb0000 - 0x00007ff995fcb000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007ff995730000 - 0x00007ff995765000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ff995e50000 - 0x00007ff995e78000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ff996150000 - 0x00007ff996178000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x00007ff9967a0000 - 0x00007ff99681b000 	C:\WINDOWS\System32\bcryptprimitives.dll
+0x00007ff995fd0000 - 0x00007ff995fdc000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:57589,suspend=y,server=n -Drebel.base=C:\Users\www14\.jrebel -Drebel.env.ide.plugin.version=2023.2.1 -Drebel.env.ide.version=2022.3.2 -Drebel.env.ide.product=IU -Drebel.env.ide=intellij -Drebel.notification.url=http://localhost:17434 -agentpath:C:\Users\www14\AppData\Roaming\JetBrains\IntelliJIdea2022.3\plugins\jr-ide-idea\lib\jrebel6\lib\jrebel64.dll -XX:TieredStopAtLevel=1 -Xverify:none -Dspring.devtools.restart.trigger-file=.restartTriggerFile -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -Dmanagement.endpoints.jmx.exposure.include=* -javaagent:C:\Users\www14\AppData\Local\JetBrains\IntelliJIdea2022.3\captureAgent\debugger-agent.jar=file:/C:/Users/www14/AppData/Local/Temp/capture.props -Dfile.encoding=UTF-8 
+java_command: com.ironman.project.ProjectApplication
+java_class_path (initial): D:\develop\Java\jdk.1.8\jre\lib\charsets.jar;D:\develop\Java\jdk.1.8\jre\lib\deploy.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\access-bridge-64.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\cldrdata.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\dnsns.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\jaccess.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\jfxrt.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\localedata.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\nashorn.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\sunec.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\sunjce_provider.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\sunmscapi.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\sunpkcs11.jar;D:\develop\Java\jdk.1.8\jre\lib\ext\zipfs.jar;D:\develop\Java\jdk.1.8\jre\lib\javaws.jar;D:\develop\Java\jdk.1.8\jre\lib\jce.jar;D:\develop\Java\jdk.1.8\jre\lib\jfr.jar;D:\develop\Java\jdk.1.8\jre\lib\jfxswt.jar;D:\develop\Java\jdk.1.8\jre\lib\jsse.jar;D:\develop\Java\jdk.1.8\jre\lib\management-agent.jar;D:\develop\Java\jdk.1.8\jre\lib\plugin.jar;D:\develop\Java\jdk.1.8\jre\lib\resources.jar;D:\develop\Java\jdk.1.8\jre\lib\rt.jar;D:\IDEA\IDEA_java.projects\project\target\classes;D:\Projects\repo\org\springframework\boot\spring-boot-starter-web\2.6.13\spring-boot-starter-web-2.6.13.jar;D:\Projects\repo\org\springframework\boot\spring-boot-starter\2.6.13\spring-boot-starter-2.6.13.jar;D:\Projects\repo\org\springframework\boot\spring-boot-starter-logging\2.6.13\spring-boot-starter-logging-2.6.13.jar;D:\Projects\repo\ch\qos\logback\logback-classic\1.2.11\logback-classic-1.2.11.jar;D:\Projects\repo\ch\qos\logback\logback-core\1.2.11\logback-core-1.2.11.jar;D:\Projects\repo\org\apache\logging\log4j\log4j-to-slf4j\2.17.2\log4j-to-slf4j-2.17.2.jar;D:\Projects\repo\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;D:\Projects\repo\org\slf4j\jul-to-slf4j\1.7.36\jul-to-slf4j-1.7.36.jar;D:\Projects\repo\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;D:\Projects\repo\org\yaml\snake
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\develop\Java\jdk.1.8
+PATH=D:\develop\Java\jdk.1.8\bin;D:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files (x86)\Common Files\Oracle\Java;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\develop\MYSQL\bin;D:\Maven\apache-maven-3.8.6\bin;D:\Program Files (x86)\git\Git\bin;C:\Windows\System32;D:\java_four\erlang\erl10.0.1\bin;D:\java_four\rabbitmq-server\rabbitmq_server-3.7.7\sbin;D:\develop\mysql\mysql-5.7.35-winx64\mysql-5.7.35-winx64\bin;D:\SVN\bin;D:\Hexo\node_modules;D:\xshell\;D:\nodejs\;;D:\wechat_hutool\微信web开发者工具\dll;D:\xshell\XftpDownload\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\develop\python\Scripts\;D:\develop\python\;C:\Users\www14\AppData\Roaming\npm;D:\vs\Microsoft VS Code\bin;D:\PythonCharm\PyCharm Community Edition 2023.1\bin;;C:\Users\www14\AppData\Local\Microsoft\WindowsApps;C:\Users\www14\AppData\Local\GitHubDesktop\bin;
+USERNAME=Superhero
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 141 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 23471 (10.0.23471.1000)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 141 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16608568k(7059880k free), swap 23948600k(3924428k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.171-b11) for windows-amd64 JRE (1.8.0_171-b11), built on Mar 28 2018 16:06:12 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Jun 06 15:05:38 2023
+elapsed time: 2 seconds (0d 0h 0m 2s)
+

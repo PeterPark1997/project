@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<form action="/upload" method="post" enctype="multipart/form-data">
+    姓名:<input type="text" name="username"><br>
+    年龄:<input type="text" name="age"><br>
+    文件:<input type="file" name="image"><br>
+    <input type="submit"value="提交">
+
+</form>-->
+
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <label for="file">Choose file to upload</label>
+    <input type="file" id="file" name="file" accept="image/*">
+    <input type="submit" value="Upload">
+</form>
+
+</body>
+</html>

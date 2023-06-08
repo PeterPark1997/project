@@ -1,0 +1,48 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+spring:
+
+  #  设置security的密码
+#  security:
+#    user:
+#      name: user
+#      password: user
+  #  设置文件传递大小
+  servlet:
+    multipart:
+    max-file-size: 10MB
+    max-request-size: 100MB
+
+  mvc:
+  #    配置静态资源路径,也就是访问路径是http://localhost:8080/project/**
+  #    static-path-pattern: /project/**
+  datasource:
+    url: jdbc:mysql://localhost:3306/ironman?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    开启druid监控
+    type: com.alibaba.druid.pool.DruidDataSource
+  #    开启热部署
+  devtools:
+    restart:
+      enabled: true
+      #      设置路径为src/main/java
+      additional-paths: src/main/java
+      #      设置不重启的文件
+      exclude: static/**
+#mybatis:
+#  configuration:
+#  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.ironman.project.pojo
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ironman.project.pojo
+# 日志配置 打印sql数据
+logging:
+  level:
+    com.ironman.project.mapper: debug
