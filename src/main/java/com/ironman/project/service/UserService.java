@@ -6,15 +6,14 @@ import com.ironman.project.pojo.User;
 import java.util.List;
 
 public interface UserService extends IService<User> {
-		List<User>findAll();
 		
-		User findById(Integer Id);
+		User findById(Integer id);
 		
-		boolean save(User user);
+		List<User> findAll();
 		
-		void delById(Integer id);
+		Integer addUser(User user);
 		
-		void update(User user);
+		boolean delById(Integer id);
 		
-		List<User> selectAllUserAndOrder();
+		boolean updateUser(User user);
 }

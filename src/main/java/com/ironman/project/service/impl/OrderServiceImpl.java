@@ -18,19 +18,34 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 		@Resource
 		private OrderMapper orderMapper;
 		
+		
+		@Override
+		public Order findById(Integer id) {
+				return orderMapper.findById(id);
+		}
+		
 		@Override
 		public List<Order> findAll() {
 				return orderMapper.findAll();
 		}
 		
 		@Override
-		public List<Order> selectByUid(Integer uid) {
-				return orderMapper.selectByUid(uid);
+		public boolean addOrder(Order order) {
+				return orderMapper.addOrder(order);
 		}
 		
 		@Override
-		public List<Order> selectAllOrderAndUsers() {
-				return orderMapper.selectAllOrderAndUsers();
+		public boolean deleById(Integer id) {
+				return orderMapper.delById(id);
 		}
 		
+		@Override
+		public void delByIds(List<Integer> ids) {
+				orderMapper.delByIds(ids);
+		}
+		
+		@Override
+		public Order updateOrder(Order order) {
+				return orderMapper.updateOrder(order);
+		}
 }

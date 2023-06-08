@@ -21,7 +21,7 @@ public class User {
 		@TableField("username")
 		private String username;
 		private String password;
-		private Address address;
+		private String address;
 		@TableField(exist = false)
 		private List<Order> orders;
 }

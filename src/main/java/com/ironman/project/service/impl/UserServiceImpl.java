@@ -19,34 +19,36 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 		private UserMapper userMapper;
 		
 		@Override
+		public User findById(Integer id) {
+				return userMapper.findById(id);
+		}
+		
+		@Override
 		public List<User> findAll() {
 				return userMapper.findAll();
 		}
 		
 		@Override
-		public User findById(Integer Id) {
-				return userMapper.findById(Id);
+		public Integer addUser(User user) {
+				//1.先从数据库中拿去数据判断用户是否已经存在
+				User userMapperByName = userMapper.findByName(user.getUsername());
+				if (userMapperByName != null) {
+						//2.如果用户存在,则返回-1
+						return -1;
+				}
+				//3.如果用户不存在,则添加用户
+				return userMapper.addUser(user);
 		}
 		
 		@Override
-		public boolean save(User user) {
-				userMapper.save(user);
-				return false;
+		public boolean delById(Integer id) {
+				return userMapper.delById(id);
 		}
 		
 		@Override
-		public void delById(Integer id) {
-				userMapper.delById(id);
+		public boolean updateUser(User user) {
+				return userMapper.updateUser(user);
 		}
 		
-		@Override
-		public void update(User user) {
-				userMapper.update(user);
-				
-		}
-		
-		@Override
-		public List<User> selectAllUserAndOrder() {
-				return userMapper.selectAllUserAndOrder();
-		}
 }
+

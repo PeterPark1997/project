@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,8 +16,9 @@ import java.time.LocalDateTime;
 @Data
 public class Order {
 		@TableId(type = IdType.AUTO)
-		private Integer orderId;
-		private LocalDateTime orderTime;
+		private Integer Id;
+		@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+		private LocalDateTime Time;
 		private BigDecimal total;
 		private Integer uid;
 		@TableField(exist = false)

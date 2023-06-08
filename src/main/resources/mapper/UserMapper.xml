@@ -2,31 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ironman.project.mapper.UserMapper">
-    <insert id="save">
-        insert into user(id, username, password)
-        values (#{id}, #{username}, #{password});
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+        #         添加用户
+        insert into user(username, password, address)
+        values (#{username}, #{password}, #{address})
     </insert>
 
-    <update id="update">
+    <update id="updateUser">
         update user
         set username = #{username},
-            password = #{password}
-        where id = #{id};
+            password = #{password},
+            address  = #{address}
+        where id = #{id}
     </update>
+
     <delete id="delById">
-        delete
-        from user
-        where id = #{id};
+        delete from user
+        where id = #{id}
     </delete>
 
-    <select id="findAll" resultType="com.ironman.project.pojo.User">
-        select id, username, password
-        from user;
+    <select id="findById" resultType="com.ironman.project.pojo.User">
+        #         根据id查询当前用户
+        select id, username, password, address
+        from user
+        where id = #{id}
     </select>
 
-    <select id="findById" resultType="com.ironman.project.pojo.User">
-        select id, username, password
+    <select id="findAll" resultType="com.ironman.project.pojo.User">
+        #         查询所有user用户
+        select id, username, password, address
+        from user;
+    </select>
+    <select id="findByName" resultType="User">
+        select id, username, password, address
         from user
-        where id = #{id};
+        where username = #{username};
     </select>
 </mapper>
